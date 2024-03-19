@@ -1,0 +1,148 @@
+        <p-dialog [(visible)]="editDialog" [style]="{width: '70vw'}" header="{{'fonctionnaire.tabPan' | translate}}" [modal]="true" styleClass="p-fluid" [maximizable]="true" [draggable]="false" [resizable]="false">
+            <ng-template pTemplate="content" >
+                <p-tabView>
+                    <p-tabPanel header="{{'fonctionnaire.tabPan' | translate}}">
+                        <div class="grid">
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="1">{{'fonctionnaire.cin' | translate}}<span style="color: red;">*</span></label>
+                                            <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'fonctionnaire.cin' | translate}}" id="1" [(ngModel)]="item.cin"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validFonctionnaireCin}"  />
+                                            <small class='p-error' *ngIf='!validFonctionnaireCin'>Cin est obligatoire.</small>
+                                        </div>
+
+
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="2">{{'fonctionnaire.nom' | translate}}<span style="color: red;">*</span></label>
+                                            <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'fonctionnaire.nom' | translate}}" id="2" [(ngModel)]="item.nom"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validFonctionnaireNom}"  />
+                                            <small class='p-error' *ngIf='!validFonctionnaireNom'>Nom est obligatoire.</small>
+                                        </div>
+
+
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="3">{{'fonctionnaire.prenom' | translate}}<span style="color: red;">*</span></label>
+                                            <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'fonctionnaire.prenom' | translate}}" id="3" [(ngModel)]="item.prenom"
+                                                    [ngClass]="{'ng-invalid ng-dirty' : !validFonctionnairePrenom}"  />
+                                            <small class='p-error' *ngIf='!validFonctionnairePrenom'>Prenom est obligatoire.</small>
+                                        </div>
+
+
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="4">{{'fonctionnaire.username' | translate}}</label>
+                                            <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'fonctionnaire.username' | translate}}" id="4" [(ngModel)]="item.username"
+                                                     />
+                                            
+                                        </div>
+
+
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="5">{{'fonctionnaire.mail' | translate}}</label>
+                                            <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'fonctionnaire.mail' | translate}}" id="5" [(ngModel)]="item.mail"
+                                                     />
+                                            
+                                        </div>
+
+
+
+                                        <div class="field align-inputswitch col-12  md:col-6">
+                                            <div  class="label-inputswitch">
+                                                <label for="6">{{'fonctionnaire.credentialsNonExpired' | translate}}</label>
+                                            </div>
+                                            <div class="input-switch">
+                                                <p-inputSwitch id="6"  [(ngModel)]="item.credentialsNonExpired"
+                                                         >
+                                                </p-inputSwitch>
+                                                
+                                            </div>
+                                        </div>
+
+
+                                        <div class="field align-inputswitch col-12  md:col-6">
+                                            <div  class="label-inputswitch">
+                                                <label for="7">{{'fonctionnaire.enabled' | translate}}</label>
+                                            </div>
+                                            <div class="input-switch">
+                                                <p-inputSwitch id="7"  [(ngModel)]="item.enabled"
+                                                         >
+                                                </p-inputSwitch>
+                                                
+                                            </div>
+                                        </div>
+
+
+                                        <div class="field align-inputswitch col-12  md:col-6">
+                                            <div  class="label-inputswitch">
+                                                <label for="8">{{'fonctionnaire.accountNonExpired' | translate}}</label>
+                                            </div>
+                                            <div class="input-switch">
+                                                <p-inputSwitch id="8"  [(ngModel)]="item.accountNonExpired"
+                                                         >
+                                                </p-inputSwitch>
+                                                
+                                            </div>
+                                        </div>
+
+
+                                        <div class="field align-inputswitch col-12  md:col-6">
+                                            <div  class="label-inputswitch">
+                                                <label for="9">{{'fonctionnaire.accountNonLocked' | translate}}</label>
+                                            </div>
+                                            <div class="input-switch">
+                                                <p-inputSwitch id="9"  [(ngModel)]="item.accountNonLocked"
+                                                         >
+                                                </p-inputSwitch>
+                                                
+                                            </div>
+                                        </div>
+
+
+                                        <div class="field align-inputswitch col-12  md:col-6">
+                                            <div  class="label-inputswitch">
+                                                <label for="10">{{'fonctionnaire.passwordChanged' | translate}}</label>
+                                            </div>
+                                            <div class="input-switch">
+                                                <p-inputSwitch id="10"  [(ngModel)]="item.passwordChanged"
+                                                         >
+                                                </p-inputSwitch>
+                                                
+                                            </div>
+                                        </div>
+
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="11">{{'fonctionnaire.username' | translate}}</label>
+                                            <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'fonctionnaire.username' | translate}}" id="11" [(ngModel)]="item.username"
+                                                     />
+                                            
+                                        </div>
+
+
+
+                                        <div class="field col-12 md:col-6">
+                                            <label for="12">{{'fonctionnaire.password' | translate}}</label>
+                                            <input class="mb-2 mr-2" type="text" pInputText  placeholder="{{'fonctionnaire.password' | translate}}" id="12" [(ngModel)]="item.password"
+                                                     />
+                                            
+                                        </div>
+
+
+
+                        </div>
+                    </p-tabPanel>
+
+                </p-tabView>
+            </ng-template>
+
+            <ng-template pTemplate="footer" >
+                <div class="p-flexbox">
+                            <button pButton pRipple label="Annuler" icon="pi pi-times" class="p-button-outlined" (click)="hideEditDialog()"></button>
+
+                        <button pButton pRipple label="Valider" icon="pi pi-check"  (click)="edit()"></button>
+                </div>
+            </ng-template>
+    </p-dialog>

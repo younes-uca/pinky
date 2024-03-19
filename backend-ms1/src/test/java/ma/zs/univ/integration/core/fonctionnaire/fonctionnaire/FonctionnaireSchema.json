@@ -1,0 +1,23 @@
+{
+    "cin": "#string",
+    "nom": "#string",
+    "prenom": "#string",
+    "username": "#string",
+    "mail": "#string",
+    "credentialsNonExpired": "#bool",
+    "enabled": "#bool",
+    "accountNonExpired": "#bool",
+    "accountNonLocked": "#bool",
+    "passwordChanged": "#bool",
+    "username": "#string",
+    "password": "#string"
+
+}
+
+
+
+
+
+
+
+

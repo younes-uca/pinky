@@ -1,0 +1,130 @@
+openapi: 3.0.3
+info:
+  title: Title
+  description: Title
+  version: 1.0.0
+servers:
+  - url: 'https'
+paths:
+  /fonctionnaires:
+    get:
+      summary: List all fonctionnaires
+      operationId: listFonctionnaires
+      tags:
+        - fonctionnaires
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of fonctionnaires
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Fonctionnaires'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a fonctionnaire
+      operationId: createFonctionnaires
+      tags:
+        - fonctionnaires
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /fonctionnaires/{fonctionnaireId}:
+    get:
+      summary: Info for a specific fonctionnaire
+      operationId: showFonctionnaireById
+      tags:
+        - fonctionnaires
+      parameters:
+        - name: fonctionnaireId
+          in: path
+          required: true
+          description: The id of the fonctionnaire to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Fonctionnaires'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  
+
+
+definitions:
+  Fonctionnaire:
+    type: "object"
+    required:
+      - id
+      - cin
+      - nom
+      - prenom
+      - username
+      - mail
+      - credentialsNonExpired
+      - enabled
+      - accountNonExpired
+      - accountNonLocked
+      - passwordChanged
+      - username
+      - password
+    properties:
+      id:
+        type: int
+      cin:
+        type: string
+      nom:
+        type: string
+      prenom:
+        type: string
+      username:
+        type: string
+      mail:
+        type: string
+      credentialsNonExpired:
+        type: boolean
+      enabled:
+        type: boolean
+      accountNonExpired:
+        type: boolean
+      accountNonLocked:
+        type: boolean
+      passwordChanged:
+        type: boolean
+      username:
+        type: string
+      password:
+        type: string
+  Fonctionnaires:
+    type: array
+    items:
+      $ref: '#/definitions/Fonctionnaire'
+
+  Error:
+    type: "object"
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string
